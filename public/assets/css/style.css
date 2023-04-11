@@ -1,0 +1,36 @@
+nav{
+    background-color: #002450;
+}
+
+footer{
+    background-color: #002450;
+}
+
+div.cardLog{
+    background-color: #002450;
+}
+
+button{
+    color: #FF0000
+}
+
+small{
+    opacity: 50%;
+}
+
+html,body{
+    height: 100vh;
+}
+
+main{
+    height: 100%;
+}
+
+.imgProfile {
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+div.cardSong{
+    background-color: #002450;
+}

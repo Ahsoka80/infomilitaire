@@ -227,19 +227,21 @@ class User{
          }
       }
 
-      //Méthode pour supprimer un users de la base de données 
-      public static function delete($idUsers)
+      //Méthode pour supprimer un user de la base de données 
+      public static function delete($idUser)
       {
-        $sql = 'DELETE FROM `users` 
-                WHERE `users`.`id_users` = :idUsers ;';
-        $pdo = Database::getInstance();
-        $sth = $pdo->prepare($sql);
-        $sth->bindValue(':idUsers', $idUsers, PDO::PARAM_INT);
-        
-        $results = $sth->execute();
-        if ($results) {
+         $sql ='DELETE FROM `users` 
+                WHERE `id_users` = :idUser ;';
+         // On prépare la requête
+         $pdo = Database::getInstance();
+         $sth = $pdo->prepare($sql);
+         //Affectation des valeurs aux marqueurs nominatifs
+         $sth->bindValue(':idUser', $idUser, PDO::PARAM_INT);
+         
+         $results = $sth->execute();
+         if ($results) {
             return ($sth->rowCount() > 0) ? true : false;
-        }
+         }
       }
 
       //Méthode pour récupérer toute les informations des utilisateurs

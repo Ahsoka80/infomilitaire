@@ -67,8 +67,9 @@ try{
             }else{
                 $message = 'une erreur est survenue';
             }
-            echo '<script>alert("'.$message.'");</script>';
-            echo '<script>window.location.href = "http://infomilitaire.localhost/controllers/songCtrl.php";</script>';
+
+            header('Location: /controllers/songCtrl.php');
+            die;
         }
         
     }

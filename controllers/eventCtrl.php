@@ -107,7 +107,9 @@
                 }else{
                     $message = 'une erreur est survenue';
                 }
-            
+                header('Location: /controllers/eventCtrl.php');
+                die;
+                
             }
         
     }

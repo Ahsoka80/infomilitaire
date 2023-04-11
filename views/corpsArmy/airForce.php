@@ -93,7 +93,7 @@
         </div>
         <!---------------------------------------------------------------------------------------->
         <div class="row justify-content-center mb-2">
-            <div class=" col-sm-12 col-md-10 col-lg-9 ">
+            <div class=" col-sm-12 col-md-10 col-lg-7">
                 <div class="row">
                     <h5>Les missions</h5>
                 </div>
@@ -203,15 +203,15 @@
                     <h5 class="text-center">Officiers subalternes</h5>
                     <div class="col-12 text-center">
                         <div class="row">
-                            <div class="col-3">
+                            <div class="col-4">
                                 <img src="/public/assets/img/grade airForce/Sous-lieutenant.png" alt="grade Sous-lieutenant">
                                 <p>Sous-Lieutenant</p>
                             </div>
-                            <div class="col-3">
+                            <div class="col-4">
                                 <img src="/public/assets/img/grade airForce/lieutenant.png" alt="grade lieutenant">
                                 <p>Lieutenant</p>
                             </div>
-                            <div class="col-3">
+                            <div class="col-4">
                                 <img src="/public/assets/img/grade airForce/capitaine a.png" alt="grade capitaine">
                                 <p>Capitaine</p>
                             </div>

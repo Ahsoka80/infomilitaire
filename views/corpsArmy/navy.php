@@ -99,7 +99,7 @@
         </div>
         <!---------------------------------------------------------------------------------------->
         <div class="row justify-content-center mb-2">
-            <div class=" col-sm-12 col-md-10 col-lg-9 ">
+            <div class=" col-sm-12 col-md-10 col-lg-7 ">
                 <div class="row">
                     <h5>Les missions</h5>
                 </div>

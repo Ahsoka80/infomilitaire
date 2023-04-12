@@ -6,6 +6,7 @@ class Song {
     private int $id_music;
     private string $title;
     private string $description;
+    private string $link;
     private string $created_at;
     private string $validated_at;
     private int $id_users;
@@ -36,6 +37,14 @@ class Song {
         return $this->description;
      }
     //===========================================================
+    public function setLink(string $link):void{
+      $this->link = $link;
+    }
+
+    public function getLink():string{
+      return $this->link;
+    }
+  //===========================================================
      public function setCreated_at(string $created_at):void{
         $this->created_at = $created_at;
      }
@@ -64,8 +73,8 @@ class Song {
     //Méthode qui permet d'ajouter des chants militaire dans la base de données 
      public function insert(){
 
-        $sql = 'INSERT INTO `music` ( `title` , `description` , `created_at`, `id_users` ) 
-                VALUES ( :title , :description , :created_at , :id_users ) ;';
+        $sql = 'INSERT INTO `music` ( `title` , `description` , `links`, `created_at`, `id_users` ) 
+                VALUES ( :title , :description , :links ,  :created_at , :id_users ) ;';
 
         $pdo = Database::getInstance();
 
@@ -74,6 +83,7 @@ class Song {
         //Affectation des valeurs aux marqueurs nominatifs
         $sth->bindValue(':title', $this->title, PDO::PARAM_STR);
         $sth->bindValue(':description', $this->description, PDO::PARAM_STR);
+        $sth->bindValue(':links', $this->link, PDO::PARAM_STR);
         $sth->bindValue(':created_at', $this->created_at, PDO::PARAM_STR);
         $sth->bindValue(':id_users', $this->id_users, PDO::PARAM_INT);
 
@@ -88,7 +98,7 @@ class Song {
      //SELECT m.id_music,m.title,m.description,m.id_users,u.pseudo FROM `music` as m LEFT JOIN users as u ON m.id_users = u.id_users;
      public static function getAll() {
 
-        $sql = 'SELECT `music`.`id_music`, `music`.`title` , `music`.`description` , `music`.`id_users` , `users`.`pseudo` 
+        $sql = 'SELECT `music`.`id_music`, `music`.`title` , `music`.`description`,  `music`.`links`, `music`.`id_users` , `users`.`pseudo` 
                 FROM `music` 
                 LEFT JOIN `users` 
                 ON music.id_users = users.id_users 
@@ -143,7 +153,7 @@ class Song {
      //Méthode pour récupérer toute les informations des utilisateurs
      public static function getAllSongs()
      {
-       $sql = 'SELECT `music`.`id_music`, `music`.`title` , `music`.`description` , `music`.`id_users` , `users`.`pseudo`, `music`.`created_at`
+       $sql = 'SELECT `music`.`id_music`, `music`.`title` , `music`.`description` , `music`.`links`, `music`.`id_users`, `users`.`pseudo`, `music`.`created_at`
                FROM `music`
                LEFT JOIN `users` 
                ON music.id_users = users.id_users 

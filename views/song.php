@@ -24,8 +24,13 @@
                                         </div>
                                         <div class="mt-1">
                                             <label for="description">Description :</label>
-                                            <textarea class="form-control" id="description" name="description" required></textarea>
+                                            <input class="form-control" id="description" name="description" required>
                                             <small><?= $errors['description']  ?? '' ?></small>
+                                        </div>
+                                        <div class="mt-1">
+                                            <label for="links">Liens :</label>
+                                            <input type="text" class="form-control" id="links" name="links" pattern="<?= REGEXP_LINKS ?>" required>
+                                            <small><?= $errors['links']  ?? '' ?></small>
                                         </div>
                                         <div class="mt-1">
                                             <button type="submit" class="btn text-light" style="background-color: #FF0000;">Valider</button>
@@ -47,6 +52,7 @@
                 <div class="card-body text-light">
                     <h5 class="card-title"><?= htmlentities($song->title) ?></h5>
                     <h6 class="card-subtitle mb-2 text-muted"><?= htmlentities($song->description) ?></h6>
+                    <p class="card-text"><a href="<?= htmlentities($song->links) ?>"><?= htmlentities($song->links) ?></a></p>
                     <p class="card-text">Ajoutée par <?= htmlentities($song->pseudo) ?></p>
                 </div>
             </div>   

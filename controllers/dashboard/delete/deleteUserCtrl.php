@@ -1,21 +1,26 @@
 <?php
-require_once __DIR__ . '/../config/constants.php';
-require_once __DIR__ . '/../models/User.php';
+require_once __DIR__ . '/../../../config/constants.php';
+require_once __DIR__ . '/../../../models/User.php';
 
     session_start();
 
 try {
-    
-
-    $idUser = intval(filter_input(INPUT_GET, 'idUser', FILTER_SANITIZE_NUMBER_INT));
-    
-    $deleteUser = User::delete($idUser);
-
-    var_dump($deleteUser);
-    die;
-    header('location: /controllers/dashboard/adminCtrl.php');
-    die;
-
+    if( isset($_SESSION["user"]["id_users"]) && isset($_GET["user_id"]))
+    {
+        if( $_SESSION["user"]["id_users"] != $_GET["user_id"] )
+        {
+            $deleteUser = User::delete($_GET["user_id"]);
+            header('location: /controllers/dashboard/userCtrl.php');
+            die;
+        }
+        else
+        {
+            
+            //user don't delete himself and get back to admin panel
+            header('location: /controllers/dashboard/userCtrl.php');
+            die;
+        }    
+    }
 } catch (\Throwable $th) {
     $errorMessage = $th->getMessage();
     var_dump($th);

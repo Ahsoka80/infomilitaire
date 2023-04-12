@@ -13,7 +13,7 @@ try {
         if (empty($emailOrPseudo)) {
             $error['emailOrPseudo'] = 'Veuillez entrer votre pseudo ou email.';
         } else {
-            $isOk = filter_var($emailOrPseudo, FILTER_VALIDATE_REGEXP, ['options' => ['regexp' => '/' . REGEXP_PSEUDO . '/'],]);
+            $isOk = true;//filter_var($emailOrPseudo, FILTER_VALIDATE_REGEXP, ['options' => ['regexp' => '/' . REGEXP_PSEUDO . '/'],]);
 
             if (!$isOk) {
                 $error['emailOrPseudo'] = 'Merci de choisir un nom valide';

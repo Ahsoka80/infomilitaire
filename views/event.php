@@ -1,17 +1,19 @@
 <div class="container">
-    <div class="row">
-        
-        <div class="col-lg-12">
-            <div class="card" style="width: 18rem;">
+    <div class="row justify-content-center">
+        <?php foreach ($events as $event){
+        ?>
+        <div class="col-lg-9">
+            <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title"></h5>
-                    <h6 class="card-subtitle mb-2 text-muted"></h6>
-                    <p class="card-text"></p>
-                    <p class="card-text"></p>
+                    <h5 class="card-title"><?= $event['title'] ?></h5>
+                    <p class="card-text"><?= $event['address']?> , <?= $event['dep_name'] ?>  , <?= $event['region_name'] ?> le <?= date('d.m.Y à H:i', strtotime($event['dateHour'])) ?></p>
+                    <p class="card-text"><?= $event['description'] ?></p>
+                    <img src="" alt="">
+                    
                 </div>
             </div>
         </div>
-        
+        <?php } ?>
         <div class="col text-center">
 
         <?php if( isset($_SESSION['user']) && $_SESSION['user'] !== null ) : ?>
@@ -32,9 +34,26 @@
                                     <small><?= $errors['title']  ?? '' ?></small>
                                 </div>
                                 <div class="mt-1">
-                                    <label for="address">Lieu :</label>
-                                    <input type="text" class="form-control" id="address" name="address" required>
+                                    <label for="address">Région :</label>
+                                    <select class="form-control" id="region" name="region" required onchange="ajax_dep();">
+                                        <option selected disabled value="">Sélectionnez une région</option>
+                                        <?php
+                                            $pdo = Database::getInstance();
+
+                                            $query = $pdo->prepare("SELECT * FROM regions");
+                                            $query->execute();
+                                            $query = $query->fetchall(PDO::FETCH_ASSOC);
+                                            foreach( $query as $region )
+                                            {
+                                                echo "<option value=\"{$region["id_region"]}\">{$region["name"]}</option>";
+                                            }
+                                        ?>
+                                    </select>
                                     <small><?= $errors['address']  ?? '' ?></small>
+                                </div>
+                                <div class="mt-1" id="div_dep">
+                                </div>
+                                <div class="mt-1" id="div_address">
                                 </div>
                                 <div class="mt-1">
                                     <label for="date">Date :</label>

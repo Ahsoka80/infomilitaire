@@ -18,6 +18,8 @@ try{
         $title = filter_input(INPUT_POST, 'title', FILTER_SANITIZE_SPECIAL_CHARS);
         //**** NETTOYAGE DESCRIPTION****/
         $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);
+        //**** NETTOYAGE LINKS****/
+        $link = filter_input(INPUT_POST, 'links', FILTER_SANITIZE_SPECIAL_CHARS);
 
         /************************* TITLE *************************/
         //**** VERIFICATION ****/
@@ -42,6 +44,18 @@ try{
             }
         }
         /***********************************************************/  
+
+        /************************* LINKS *************************/
+        //**** VERIFICATION ****/
+        if (empty($link)) {
+            $errors['links'] = 'Le champ est obligatoire';
+        } else {
+            $isOk = filter_var($link, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEXP_LINKS . '/')));
+            if (!$isOk) {
+                $errors['links'] = 'Merci de choisir un nom valide';
+            }
+        }
+        /***********************************************************/ 
         // var_dump($errors);
         // die;
         if (empty($errors)) {
@@ -55,6 +69,7 @@ try{
             $song = New Song;
             $song->setTitle($title);
             $song->setDescription($description);
+            $song->setLink($link);
             $song->setCreated_at($created_at);
             $song->setId_users($id_users);
 

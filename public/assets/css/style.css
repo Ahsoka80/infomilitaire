@@ -4,6 +4,8 @@ nav{
 
 footer{
     background-color: #002450;
+    position: sticky;
+    top: 100%;
 }
 
 div.cardLog{

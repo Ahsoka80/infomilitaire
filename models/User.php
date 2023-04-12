@@ -230,6 +230,7 @@ class User{
       //Méthode pour supprimer un user de la base de données 
       public static function delete($idUser)
       {
+         //echo var_dump($idUser);
          $sql ='DELETE FROM `users` 
                 WHERE `id_users` = :idUser ;';
          // On prépare la requête

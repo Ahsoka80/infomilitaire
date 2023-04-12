@@ -28,8 +28,8 @@
                             <td><?= htmlentities($user->email) ?></td>
                             <td><?= htmlentities($user->id_role) ?></td>
                             <td>
-                                <a href="/controllers/dashboard/modify/updateUserCtrl.php "><img src="/public/assets/img/edit.png" alt=""  width="20"></a>
-                                <a href="/controllers/dashboard/delete/deleteUserCtrl.php "><img src="/public/assets/img/delete.png" alt="" width="20"></i></a>
+                                <a href="/controllers/dashboard/modify/updateUserCtrl.php"><img src="/public/assets/img/edit.png" alt=""  width="20"></a>
+                                <a href="/controllers/dashboard/delete/deleteUserCtrl.php?user_id=<?=$user->id_users?>"><img src="/public/assets/img/delete.png" alt="" width="20"></i></a>
                             </td>
                         </tr>
                     <?php } ?>

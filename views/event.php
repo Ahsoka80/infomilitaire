@@ -2,19 +2,42 @@
     <div class="row justify-content-center">
         <?php foreach ($events as $event){
         ?>
-        <div class="col-lg-9">
+        <div class="col-lg-8 mt-5">
             <div class="card">
                 <div class="card-body">
                     <h5 class="card-title"><?= $event['title'] ?></h5>
-                    <p class="card-text"><?= $event['address']?> , <?= $event['dep_name'] ?>  , <?= $event['region_name'] ?> le <?= date('d.m.Y à H:i', strtotime($event['dateHour'])) ?></p>
+                    <p class="card-text"><?= $event['address']?> , <?= $event['dep_name'] ?>  , <?= $event['region_name'] ?> le <?= date('d/m/Y à H:i', strtotime($event['dateHour'])) ?></p>
                     <p class="card-text"><?= $event['description'] ?></p>
-                    <img src="" alt="">
+                    <div class="text-center">
+                        <img src="/public/assets/img/Chat_roux_à_pelage_court..jpg" alt="">
+                    </div>
+                    <p class="card-text">Proposée par <?= $event['pseudo'] ?></p>
                     
+                    <button><img  src="/public/assets/img/bulle-de-discussion.png" alt="" width="30"></button>
+                    <div class='text' id="text">
+                        <form method="POST">
+                            <input type="hidden" id="id_event" name="id_event" value="<?=$event["id_event"]?>">
+                            <div class="mt-3">
+                                <input type="text" class="form-control" id="comment" name="comment" placeholder="Ecrivez un commentaire" pattern="<?= REGEXP_TITLE ?>" required>
+                                <small><?= $error['comment']  ?? '' ?></small>
+                            </div>
+                            <div>
+                                <input class="btn btn-primary" type="submit" value="Envoyer">
+                            </div>
+                        </form>
+                        <hr>
+                        <?php foreach ($comments as $comment){ ?>
+                        <div>
+                            <p class="card-text"><?= $comment->id_users ?></p>
+                            <p class="card-text">Test ton toggle fonctionne</p>
+                        </div> 
+                        <?php } ?>
+                    </div> 
                 </div>
             </div>
         </div>
         <?php } ?>
-        <div class="col text-center">
+        <div class="col-lg-6 text-center">
 
         <?php if( isset($_SESSION['user']) && $_SESSION['user'] !== null ) : ?>
             <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formAddEvent">Ajouter un évenement</button>

@@ -2,6 +2,7 @@
 
     require_once __DIR__ . '/../config/constants.php';
     require_once __DIR__ . '/../models/Event.php';
+    require_once __DIR__ . '/../models/Comment.php';
 
     try {
         session_start();
@@ -25,10 +26,15 @@
             $hour = filter_input(INPUT_POST, 'hour', FILTER_SANITIZE_SPECIAL_CHARS);
             //**** NETTOYAGE DESCRIPTION****/
             $description = filter_input(INPUT_POST, 'description', FILTER_SANITIZE_SPECIAL_CHARS);
-
+            //**** NETTOYAGE ID_REGION****/
             $id_region = intval(filter_input(INPUT_POST, 'region', FILTER_SANITIZE_NUMBER_INT));
-
+            //**** NETTOYAGE ID_DEP****/
             $id_dep = filter_input(INPUT_POST, 'dep', FILTER_SANITIZE_SPECIAL_CHARS);
+            //**** NETTOYAGE COMMENT****/
+            $comment = filter_input(INPUT_POST, 'comment', FILTER_SANITIZE_SPECIAL_CHARS);
+
+            $id_event = isset($_POST["id_event"]) ? $_POST["id_event"] : false;
+            
 
             $dateHour = $date.' '.$hour;
 
@@ -92,6 +98,17 @@
                 }
             }
             /***********************************************************/  
+            /************************* COMMENTAIRE *************************/
+            //**** VERIFICATION ****/
+            if (empty($comment)) {
+                $error['comment'] = 'Le champ est obligatoire';
+            } else {
+                $isOk = filter_var($comment, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEXP_TITLE . '/')));
+                if (!$isOk) {
+                    $error['comment'] = 'Merci de choisir un commentaire valide';
+                }
+            }
+            /***********************************************************/  
             
             if (empty($errors)) {
 
@@ -111,20 +128,45 @@
             
 
                 if ($response) {
-                    $message = 'Votre compte a bien été ajouté';
+                    $message = 'Votre event a bien été ajouté';
                 }else{
                     $message = 'une erreur est survenue';
                 }
                 header('Location: /controllers/eventCtrl.php');
                 die;
-                
             }
+
+            if (empty($error)) {
+
+                $create_at = date('Y-m-d H:i:s');
+                $comments = New Comment;
+                
+                $comments->setComment($comment);
+                $comments->setId_event($id_event);
+                $comments->setCreate_at($create_at);
+                $comments->setId_users($id_user);
+
+                // var_dump($id_event);
+                // die;
+                $response = $comments->addComment();
+            
+                
+                if ($response) {
+                    $message = 'Votre event a bien été ajouté';
+                }else{
+                    $message = 'une erreur est survenue';
+                }
+                header('Location: /controllers/eventCtrl.php');
+                die;
+            }
+            
         
     }
     } catch (\Throwable $th) {
-
-        var_dump($th);
+        var_dump($_POST);
         die;
+        // var_dump($th);
+        // die;
         // header('Location: /controllers/errorCtrl.php');
         // die;
     }

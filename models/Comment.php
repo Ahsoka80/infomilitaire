@@ -5,8 +5,9 @@ class Comment{
 
     private int $id_comment;
     private string $comment;
-    private string $created_at;
+    private string $create_at;
     private string $validated_at;
+    private int $id_event;
     private int $id_users;
     					
     //===========================================================
@@ -26,12 +27,12 @@ class Comment{
         return $this->comment;
      }
     //===========================================================
-     public function setCreated_at(string $created_at):void{
-        $this->$created_at = $created_at;
+     public function setCreate_at(string $create_at):void{
+      $this->create_at = $create_at;
      }
 
-     public function getCreated_at():string{
-        return $this->created_at;
+     public function getCreate_at():string{
+        return $this->create_at;
      }
     //===========================================================
      public function setValidated_at(string $validated_at):void{
@@ -42,6 +43,14 @@ class Comment{
         return $this->validated_at;
      }
     //===========================================================
+     public function setId_event(int $id_event):void{
+         $this->id_event = $id_event;
+     }
+
+     public function getId_event():int{
+         return $this->id_event;
+     }
+ //===========================================================
      public function setId_users(int $id_users):void{
         $this->id_users = $id_users;
      }
@@ -51,6 +60,26 @@ class Comment{
      }
    //===========================================================
 
+   public function addComment(){
+
+      $sql = 'INSERT INTO `comments` ( `comment`, `created_at` , `id_event`, `id_users`)
+              VALUES (:comment, :create_at , :id_event ,  :id_users) ;';
+      
+      $pdo = Database::getInstance();
+
+      $sth = $pdo->prepare($sql);
+
+      $sth->bindValue(':comment',         $this->getComment(),      PDO::PARAM_STR);
+      $sth->bindValue(':create_at',       $this->getCreate_at(),   PDO::PARAM_STR);
+      $sth->bindValue(':id_event',        $this->getId_event(),     PDO::PARAM_INT);
+      $sth->bindValue(':id_users',         $this->getId_users(),     PDO::PARAM_INT);
+
+      $results =  $sth->execute();
+
+        if ($results) {
+            return ($sth->rowCount() > 0) ? true : false;
+        }
+   }
 
     
 }

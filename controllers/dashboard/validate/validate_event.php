@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/../../../config/constants.php';
-require_once __DIR__ . '/../../../models/Event.php';
+require_once __DIR__ . '/../../config/constants.php';
+require_once __DIR__ . '/../../models/Event.php';
 
 try {
     session_start();
@@ -14,14 +14,22 @@ try {
         die;
     }
 
-    $deleteEvent = Event::delete($_GET["id_event"]);
-    header('location: /controllers/dashboard/eventCtrl.php');
+    if( isset($_GET["id_event"])  )
+    {
+        $pdo = Database::getInstance();
+        $validate = $pdo->prepare("UPDATE `comments` SET `validated_at`= :validated_at WHERE id_event = :id_event");
+        $validate->execute(array(":validated_at"=>$ma_data,":id_event"=>$_GET["id_event"]));
+    }
+   
+    header('Location: ');
     die;
+
+    
     
     
 } catch (\Throwable $th) {
 
-    // $errorMessage = $th->getMessage();
+    // // $errorMessage = $th->getMessage();
     // var_dump($th);
     // die;
     header('Location: /../homeCtrl.php');

@@ -14,6 +14,7 @@ try {
         die;
     }
     
+    $events = Event::getAll();
     
 } catch (\Throwable $th) {
 

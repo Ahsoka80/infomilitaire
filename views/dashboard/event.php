@@ -9,6 +9,7 @@
             <table class="table table-responsive mt-4">
                 <thead>
                     <tr>
+                        <th>#</th>
                         <th>Titre</th>
                         <th>Description</th>
                         <th>Date d'ajout</th>
@@ -19,18 +20,18 @@
                 </thead>
                 <tbody>
                 <?php
-                    foreach ($patients as $patient) {
+                    foreach ($events as $event) {
                     ?>
                         <tr>
-                            <td><?= htmlentities($patient->lastname) ?></td>
-                            <td><?= htmlentities($patient->firstname) ?></td>
-                            <td><?= htmlentities(date('d.m.Y', strtotime($patient->birthdate))) ?></td>
-                            <td><?= htmlentities($patient->phone) ?></td>
-                            <td><a href="mailto:<?= htmlentities($patient->mail) ?>"><?= htmlentities($patient->mail) ?></a></td>
+                            <td><?= htmlentities($event['id_event']) ?></td>
+                            <td><?= htmlentities($event['title']) ?></td>
+                            <td><?= htmlentities($event['description']) ?></td>
+                            <td><?= htmlentities(date('d.m.Y', strtotime($event['created_at']))) ?></td>
+                            <td><?= htmlentities($event['address'])?>, <?= htmlentities($event['dep_name'])?> , <?= htmlentities($event['region_name'])?></td>
+                            <td><?= htmlentities($event['pseudo']) ?></td>
                             <td>
-
                                 <a href="/controllers/dashboard/modify/updateEventCtrl.php"><img src="/public/assets/img/edit.png" alt=""  width="20"></a>
-                                <a href="/controllers/dashboard/delete/deleteEventCtrl.php"><img src="/public/assets/img/delete.png" alt="" width="20"></i></a>
+                                <a href="/controllers/dashboard/delete/deleteEventCtrl.php?id_event=<?=$event['id_event']?>"><img src="/public/assets/img/delete.png" alt="" width="20"></i></a>
                             </td>
                         </tr>
                     <?php } ?>

@@ -1,6 +1,7 @@
 <?php
-require_once __DIR__ . '/../../config/constants.php';
-require_once __DIR__ . '/../../models/Song.php';
+require_once __DIR__ . '/../../../config/constants.php';
+require_once __DIR__ . '/../../../models/Song.php';
+require_once __DIR__ . '/../../../models/User.php';
 
 try {
     session_start();
@@ -14,16 +15,17 @@ try {
         die;
     }
 
-
-
-    // $songs = Song::delete();
+    
+        $deleteSong = Song::delete($_GET["id_music"]);
+        header('location: /controllers/dashboard/songCtrl.php');
+        die;
     
     
 } catch (\Throwable $th) {
 
     // // $errorMessage = $th->getMessage();
-    // var_dump($th);
-    // die;
+    var_dump($th);
+    die;
     header('Location: /../homeCtrl.php');
     die;
 }

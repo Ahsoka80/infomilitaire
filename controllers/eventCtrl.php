@@ -12,6 +12,8 @@
         }
 
         $events = Event::getAll();
+        $comments = Comment::getAllComment();
+
         //On ne controle que s'il y a des données envoyées 
         if ($_SERVER['REQUEST_METHOD'] == 'POST') 
         {
@@ -139,16 +141,16 @@
             if (empty($error)) {
 
                 $create_at = date('Y-m-d H:i:s');
-                $comments = New Comment;
+                $commentes = New Comment;
                 
-                $comments->setComment($comment);
-                $comments->setId_event($id_event);
-                $comments->setCreate_at($create_at);
-                $comments->setId_users($id_user);
+                $commentes->setComment($comment);
+                $commentes->setId_event($id_event);
+                $commentes->setCreate_at($create_at);
+                $commentes->setId_users($id_user);
 
                 // var_dump($id_event);
                 // die;
-                $response = $comments->addComment();
+                $response = $commentes->addComment();
             
                 
                 if ($response) {
@@ -163,8 +165,8 @@
         
     }
     } catch (\Throwable $th) {
-        var_dump($_POST);
-        die;
+        // var_dump($_POST);
+        // die;
         // var_dump($th);
         // die;
         // header('Location: /controllers/errorCtrl.php');

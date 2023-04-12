@@ -5,6 +5,7 @@ require_once __DIR__ . '/../../../models/User.php';
     session_start();
 
 try {
+    
     if( isset($_SESSION["user"]["id_users"]) && isset($_GET["user_id"]))
     {
         if( $_SESSION["user"]["id_users"] != $_GET["user_id"] )

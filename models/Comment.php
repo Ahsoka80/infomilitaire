@@ -81,5 +81,72 @@ class Comment{
         }
    }
 
+   public static function getAllComment(): array {
+
+      $sql = 'SELECT `comments`.`id_event`,`comments`.`comment`, `users`.`pseudo` FROM `comments`
+              LEFT JOIN `users`
+                  ON `comments`.`id_users` = `users`.`id_users`
+              LEFT JOIN `events`
+                  ON `comments`.`id_event` = `events`.`id_event`
+              WHERE `comments`.`validated_at` IS NOT NULL ;';
+
+      $pdo = Database::getInstance();
+
+      $sth = $pdo->prepare($sql);
+
+      $sth->execute();
+      $results = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+      return $results;
+   }
+
+   public static function getAllCommentForDashboard(){
+
+      $sql = 'SELECT * , `users`.`pseudo` FROM `comments`
+              LEFT JOIN  `users`
+               ON `comments`.`id_users` = `users`.`id_users`
+              ORDER BY `id_event`;';
+      
+      $pdo = Database::getInstance();
+      $sth = $pdo->prepare($sql);
+      $sth->execute();
+      $results = $sth->fetchAll();
+      return $results;
+   }
     
+
+   public static function delete($idComment){
+
+      $sql = 'DELETE FROM `comments` 
+              WHERE `comments`.`id_comment` = :idComment ;';
+
+      $pdo = Database::getInstance();
+      $sth = $pdo->prepare($sql);
+      $sth->bindValue(':idComment', $idComment, PDO::PARAM_INT);
+      
+      $results = $sth->execute();
+      if ($results) {
+          return ($sth->rowCount() > 0) ? true : false;
+      }
+      
+   }
+
+   public static function getAllCommentWaiting(): array {
+
+      $sql = 'SELECT `comments`.`id_event`,`comments`.`comment`, `users`.`pseudo` FROM `comments`
+              LEFT JOIN `users`
+                  ON `comments`.`id_users` = `users`.`id_users`
+              LEFT JOIN `events`
+                  ON `comments`.`id_event` = `events`.`id_event`
+              WHERE `comments`.`validated_at` IS NULL ;';
+
+      $pdo = Database::getInstance();
+
+      $sth = $pdo->prepare($sql);
+
+      $sth->execute();
+      $results = $sth->fetchAll(PDO::FETCH_ASSOC);
+
+      return $results;
+   }
 }

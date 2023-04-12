@@ -1,12 +1,7 @@
 <?php
 require_once __DIR__ . '/../../config/constants.php';
-require_once __DIR__ . '/../../models/User.php';
-require_once __DIR__ . '/../../models/Song.php';
 
 try {
-
-    $users = User::getAllUsers();
-    $songs = Song::getAllSongs();
 
     session_start();
 

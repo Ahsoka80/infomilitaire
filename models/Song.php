@@ -95,13 +95,13 @@ class Song {
      }
 
      //Méthode qui permet d'afficher tout les chants enregistrer dans la base de données 
-     //SELECT m.id_music,m.title,m.description,m.id_users,u.pseudo FROM `music` as m LEFT JOIN users as u ON m.id_users = u.id_users;
+    
      public static function getAll() {
 
         $sql = 'SELECT `music`.`id_music`, `music`.`title` , `music`.`description`,  `music`.`links`, `music`.`id_users` , `users`.`pseudo` 
                 FROM `music` 
                 LEFT JOIN `users` 
-                ON music.id_users = users.id_users 
+                ON `music`.`id_users` = users.`id_users` 
                 ORDER BY `title`;';
 
         $pdo = Database::getInstance();
@@ -156,7 +156,8 @@ class Song {
        $sql = 'SELECT `music`.`id_music`, `music`.`title` , `music`.`description` , `music`.`links`, `music`.`id_users`, `users`.`pseudo`, `music`.`created_at`
                FROM `music`
                LEFT JOIN `users` 
-               ON music.id_users = users.id_users 
+               ON music.id_users = users.id_users
+               WHERE `music`.`validated_at` IS NOT NULL 
                ORDER BY `title`;';
        $pdo = Database::getInstance();
        $sth = $pdo->prepare($sql);
@@ -164,4 +165,21 @@ class Song {
        $results = $sth->fetchAll();
        return $results;
      }
+
+     public static function getAllWaiting() {
+
+      $sql = 'SELECT `music`.`id_music`, `music`.`title` , `music`.`description`,  `music`.`links`, `music`.`id_users` , `music`.`created_at` , `users`.`pseudo` 
+              FROM `music` 
+              LEFT JOIN `users` 
+               ON `music`.`id_users` = `users`.`id_users` 
+              WHERE `music`.`validated_at` IS NULL
+              ORDER BY `title`;';
+
+      $pdo = Database::getInstance();
+      $sth = $pdo->prepare($sql);
+      
+      $sth->execute();
+      $results = $sth->fetchAll(PDO::FETCH_ASSOC);
+      return $results;
+   }
 }

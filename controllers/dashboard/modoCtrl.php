@@ -1,6 +1,8 @@
 <?php
-require_once __DIR__ . '/../../../config/constants.php';
-require_once __DIR__ . '/../../../models/Event.php';
+require_once __DIR__ . '/../../config/constants.php';
+require_once __DIR__ . '/../../models/Event.php';
+require_once __DIR__ . '/../../models/Song.php';
+require_once __DIR__ . '/../../models/Comment.php';
 
 try {
     session_start();
@@ -13,23 +15,22 @@ try {
         header('Location: /../profile/profileCtrl.php');
         die;
     }
+    
+    $events = Event::getAllWaiting();
+    $songs = Song::getAllWaiting();
+    $comments = Comment::getAllCommentWaiting();
 
-    $deleteEvent = Event::delete($_GET["id_event"]);
-    header('location: /controllers/dashboard/eventCtrl.php');
-    die;
-    
-    
 } catch (\Throwable $th) {
 
-    // $errorMessage = $th->getMessage();
+    // // $errorMessage = $th->getMessage();
     // var_dump($th);
+    // // die;
+    // header('Location: /../homeCtrl.php');
     // die;
-    header('Location: /../homeCtrl.php');
-    die;
 }
 
 /***************AFFICHAGE DES VUES*******************/
 include_once(__DIR__ . '/../../views/templates/header.php');
-include_once(__DIR__ . '/../../views/dashboard/song.php');
+include_once(__DIR__ . '/../../views/dashboard/modo.php');
 include_once(__DIR__ . '/../../views/templates/footer.php');
 /****************************************************/

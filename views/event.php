@@ -13,7 +13,7 @@
                     </div>
                     <p class="card-text">Proposée par <?= $event['pseudo'] ?></p>
                     
-                    <button><img  src="/public/assets/img/bulle-de-discussion.png" alt="" width="30"></button>
+                    <button name="toggle_btn"><img  src="/public/assets/img/bulle-de-discussion.png" alt="" width="30"></button>
                     <div class='text' id="text">
                         <form method="POST">
                             <input type="hidden" id="id_event" name="id_event" value="<?=$event["id_event"]?>">
@@ -26,12 +26,19 @@
                             </div>
                         </form>
                         <hr>
-                        <?php foreach ($comments as $comment){ ?>
+                        <?php
+                            foreach ($comments as $comment){ 
+                                if( $comment["id_event"] == $event["id_event"] )
+                                {
+                        ?>
                         <div>
-                            <p class="card-text"><?= $comment->id_users ?></p>
-                            <p class="card-text">Test ton toggle fonctionne</p>
+                            <p class="card-text"><?= $comment['pseudo'] ?></p>
+                            <p class="card-text"><?= $comment['comment'] ?></p>
                         </div> 
-                        <?php } ?>
+                        <?php 
+                                }    
+                            } 
+                        ?>
                     </div> 
                 </div>
             </div>

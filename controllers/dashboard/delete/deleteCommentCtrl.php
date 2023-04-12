@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/../../config/constants.php';
-require_once __DIR__ . '/../../models/Comment.php';
+require_once __DIR__ . '/../../../config/constants.php';
+require_once __DIR__ . '/../../../models/Comment.php';
 
 try {
     session_start();
@@ -14,7 +14,9 @@ try {
         die;
     }
 
-    
+    $deleteComment = Comment::delete($_GET["id_comment"]);
+    header('location: /controllers/dashboard/commentCtrl.php');
+    die;
     
     
     

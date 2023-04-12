@@ -33,12 +33,14 @@ function  ajax_address()
 }
 
 //Function toggle comment 
-// let btn = document.querySelector('toggleComment');
-// let text = document.querySelector('.text');
+let btns    = document.getElementsByName('toggle_btn');
+let text    = document.getElementsByClassName('text');
 
-// let isVisible = false;
+let isVisible = false;
 
-// btn.addEventListener('click', () => {
-//     isVisible = !isVisible;
-//     isVisible ? text.classList.add('is-visible') : text.classList.remove('is-visible');
-// });
+btns.forEach( function callback(btn, key) {
+    btn.addEventListener('click', () => {
+        isVisible = !isVisible;
+        isVisible ? text[key].style = 'display: block;' : text[key].style = 'display: none;';
+    });
+});

@@ -13,6 +13,7 @@
                         <th>#</th>
                         <th>Titre</th>
                         <th>Description</th>
+                        <th>Liens</th>
                         <th>Date d'ajout</th>
                         <th>Pseudo</th>
                         <th>Outils</th>
@@ -26,11 +27,12 @@
                         <td><?= htmlentities($song->id_music) ?></td>
                         <td><?= htmlentities($song->title) ?></td>
                         <td><?= htmlentities($song->description) ?></td>
+                        <td><a href=""><?= htmlentities($song->links)?></a></td>
                         <td><?= htmlentities(date('d.m.Y à H:i', strtotime($song->created_at))) ?></td>
                         <td><?= htmlentities($song->pseudo) ?></td>
                         <td>
                             <a href="/controllers/dashboard/modify/updateSongCtrl.php"><img src="/public/assets/img/edit.png" alt=""  width="20"></a>
-                            <a href="/controllers/dashboard/modify/deleteSongCtrl.php"><img src="/public/assets/img/delete.png" alt="" width="20"></i></a>
+                            <a href="/controllers/dashboard/delete/deleteSongCtrl.php?id_music=<?=$song->id_music?>"><img src="/public/assets/img/delete.png" alt="" width="20"></i></a>
                         </td>
                         
                     </tr>

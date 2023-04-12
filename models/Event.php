@@ -140,6 +140,8 @@ class Event{
                      e.address,
                      e.description,
                      e.dateHour,
+                     e.created_at,
+                     e.`validated_at`,
                      u.pseudo,
                      r.name as region_name,
                      d.name as dep_name 
@@ -149,7 +151,8 @@ class Event{
                   LEFT JOIN `regions` as r
                      ON e.`id_region` = r.`id_region`
                   LEFT JOIN `departement` as d
-                     ON e.`id_dep` = d.`id_dep`;';
+                     ON e.`id_dep` = d.`id_dep`
+                  WHERE e.`validated_at` IS NOT NULL;';
       
       $sth = $pdo->prepare($sql);
 
@@ -159,6 +162,55 @@ class Event{
 
    }
    
-   
+   //Méthode pour supprimer un user de la base de données 
+   public static function delete($idEvent)
+   {
+
+      $sql ='DELETE FROM `events` 
+             WHERE `id_event` = :idEvent ;';
+
+      // On prépare la requête
+      $pdo = Database::getInstance();
+      $sth = $pdo->prepare($sql);
+
+      //Affectation des valeurs aux marqueurs nominatifs
+      $sth->bindValue(':idEvent', $idEvent, PDO::PARAM_INT);
+      
+      $results = $sth->execute();
+      if ($results) {
+         return ($sth->rowCount() > 0) ? true : false;
+      }
+   }
+
+   public static function getAllWaiting() : array {
+
+      $pdo = Database::getInstance();
+
+      $sql =   '  SELECT 
+                     e.id_event,
+                     e.title,
+                     e.address,
+                     e.description,
+                     e.dateHour,
+                     e.created_at,
+                     u.pseudo,
+                     r.name as region_name,
+                     d.name as dep_name 
+                  FROM `events` as e
+                  LEFT JOIN `users` as u
+                     ON e.id_users = u.`id_users`
+                  LEFT JOIN `regions` as r
+                     ON e.`id_region` = r.`id_region`
+                  LEFT JOIN `departement` as d
+                     ON e.`id_dep` = d.`id_dep`;
+                  WHERE e.`validated_at` IS NULL;';
+      
+      $sth = $pdo->prepare($sql);
+
+      $sth->execute();
+      $results = $sth->fetchAll(PDO::FETCH_ASSOC);
+      return $results;
+
+   }
 
 }

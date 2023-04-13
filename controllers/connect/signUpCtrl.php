@@ -55,16 +55,16 @@ try {
         $passwordVerif = filter_input(INPUT_POST, 'passwordVerif');
 
         if (empty($password) && empty($passwordVerif)) {
-            $error['password'] = 'Veuillez entrer un mot de passe.';
+            $errors['password'] = 'Veuillez entrer un mot de passe.';
         } else {
-
             // Mots de passe identiques ?
             if ($password != $passwordVerif) {
-                $error['password'] = 'Les mots de passe doivent être identiques.';
+                $errors['password'] = 'Les mots de passe doivent être identiques.';
             } else {
+                
                 // Mot de passe correspond à la regex ?
                 if (!filter_var($password, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEXP_PASSWORD . '/')))){
-                    $error['password'] = 'Votre mot de passe doit contenir au moins 8 caractère dont 1 Majuscule, 1 miniscule, 1 caractère spécial et 1 chiffre.';
+                    $errors['password'] = 'Votre mot de passe doit contenir au moins 8 caractère dont 1 Majuscule, 1 miniscule, 1 caractère spécial et 1 chiffre.';
                 } else {
                     $password = password_hash($password, PASSWORD_DEFAULT);
                 }
@@ -75,8 +75,8 @@ try {
         //=======================================================================================================================================================
         
         if(empty($errors)){
-        $created_at = date('Y-m-d H:i:s');
-        $id_role = '2';
+            $created_at = date('Y-m-d H:i:s');
+            $id_role = '2';
             //**** HYDRATATION ****/
             $user = new User;
             $user->setPseudo($pseudo);
@@ -93,6 +93,14 @@ try {
                 $message = 'une erreur est survenue';
             }
             
+        }
+        else
+        {
+            $message = "";
+            foreach ($errors as $error) 
+            {
+                $message .= $error . '<br>';
+            }
         }
     }
 } catch (\Throwable $th) {

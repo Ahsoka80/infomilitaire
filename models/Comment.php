@@ -102,10 +102,11 @@ class Comment{
 
    public static function getAllCommentForDashboard(){
 
-      $sql = 'SELECT * , `users`.`pseudo` FROM `comments`
-              LEFT JOIN  `users`
-               ON `comments`.`id_users` = `users`.`id_users`
-              ORDER BY `id_event`;';
+      $sql = ' SELECT * , `users`.`pseudo` FROM `comments`
+               LEFT JOIN  `users`
+                  ON `comments`.`id_users` = `users`.`id_users`
+               WHERE `comments`.`validated_at` IS NOT NULL ;
+               ORDER BY `id_event`;';
       
       $pdo = Database::getInstance();
       $sth = $pdo->prepare($sql);
@@ -133,7 +134,7 @@ class Comment{
 
    public static function getAllCommentWaiting(): array {
 
-      $sql = 'SELECT `comments`.`id_event`,`comments`.`comment`, `users`.`pseudo` FROM `comments`
+      $sql = 'SELECT `comments`.`id_comment`,`comments`.`comment`, `comments`.`created_at` , `users`.`pseudo`, `comments`.`id_event` FROM `comments`
               LEFT JOIN `users`
                   ON `comments`.`id_users` = `users`.`id_users`
               LEFT JOIN `events`

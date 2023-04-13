@@ -18,7 +18,7 @@
                         <form method="POST">
                             <input type="hidden" id="id_event" name="id_event" value="<?=$event["id_event"]?>">
                             <div class="mt-3">
-                                <input type="text" class="form-control" id="comment" name="comment" placeholder="Ecrivez un commentaire" pattern="<?= REGEXP_TITLE ?>" required>
+                                <input type="text" class="form-control" id="comment" name="comment" placeholder="Ecrivez un commentaire" pattern="<?= REGEXP_COMMENT ?>" required>
                                 <small><?= $error['comment']  ?? '' ?></small>
                             </div>
                             <div>

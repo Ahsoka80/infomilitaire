@@ -105,7 +105,7 @@
             if (empty($comment)) {
                 $error['comment'] = 'Le champ est obligatoire';
             } else {
-                $isOk = filter_var($comment, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEXP_TITLE . '/')));
+                $isOk = filter_var($comment, FILTER_VALIDATE_REGEXP, array("options" => array("regexp" => '/' . REGEXP_COMMENT . '/')));
                 if (!$isOk) {
                     $error['comment'] = 'Merci de choisir un commentaire valide';
                 }

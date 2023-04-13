@@ -7,12 +7,13 @@
 
  // Déclaration de REGEXP
  define('REGEXP_PSEUDO', '^[a-zA-Z]*$');
- define('REGEXP_PASSWORD', '^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$');
+ define('REGEXP_PASSWORD', '^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$');
 
  define('REGEXP_TITLE', '^[a-zA-Z]*$');
  define('REGEXP_HOUR','^(0[0-9]|1[0-9]|2[0-3]|[0-9]):[0-5][0-9]$');
  define('REGEXP_DATE','^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))$');
  define('REGEXP_LINKS','^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube(-nocookie)?\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$');
+ define('REGEXP_COMMENT','[[:alnum:][:space:]áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ!:.;,#.-]+');
 //  define('REGEXP_DESCRIPTION','^[a-zA-Z0-9éçà.!\'^\',""^\s()-œ]$');
 
 

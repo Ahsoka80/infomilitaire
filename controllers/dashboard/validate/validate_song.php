@@ -1,6 +1,6 @@
 <?php
-require_once __DIR__ . '/../../config/constants.php';
-require_once __DIR__ . '/../../models/Comment.php';
+require_once __DIR__ . '/../../../config/constants.php';
+require_once __DIR__ . '/../../../models/Event.php';
 
 try {
     session_start();
@@ -14,7 +14,16 @@ try {
         die;
     }
 
-    
+    if( isset($_GET["id_music"])  )
+    {
+        $validated_at = date('Y-m-d H:i:s');
+        $pdo = Database::getInstance();
+        $validate = $pdo->prepare("UPDATE `music` SET `validated_at` = :validated_at WHERE id_music = :id_music");
+        $validate->execute(array(":validated_at"=>$validated_at,":id_music"=>$_GET["id_music"]));
+    }
+   
+    header('Location: /controllers/dashboard/modoCtrl.php');
+    die;
 
     
     

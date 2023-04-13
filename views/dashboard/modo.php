@@ -68,7 +68,7 @@
                         <td><?= date('d.m.Y à H:i', strtotime($song['created_at'])) ?></td>
                         <td><?= $song['pseudo'] ?></td>
                         <td>
-                            <a href="/controllers/dashboard/modify/updateSongCtrl.php"><img src="/public/assets/img/check.png" alt=""  width="20"></a>
+                            <a href="/controllers/dashboard/validate/validate_song.php?id_music=<?=$song['id_music']?>"><img src="/public/assets/img/check.png" alt=""  width="20"></a>
                             <a href="/controllers/dashboard/delete/deleteSongCtrl.php?id_music=<?=$song['id_music']?>"><img src="/public/assets/img/clear.png" alt="" width="20"></i></a>
                         </td>
                         
@@ -96,15 +96,15 @@
                     foreach ($comments as $comment) {
                     ?>
                         <tr>
-                            <td><?= htmlentities($comment->id_comment) ?></td>
-                            <td><?= htmlentities($comment->comment) ?></td>
-                            <td><?= htmlentities($comment->pseudo) ?></td>
-                            <td><?= htmlentities(date('d.m.Y à H:i:s', strtotime($comment->created_at))) ?></td>
-                            <td><?= htmlentities($comment->id_event) ?></td>
+                            <td><?= htmlentities($comment['id_comment']) ?></td>
+                            <td><?= htmlentities($comment['comment']) ?></td>
+                            <td><?= htmlentities($comment['pseudo']) ?></td>
+                            <td><?= htmlentities(date('d.m.Y à H:i:s', strtotime($comment['created_at']))) ?></td>
+                            <td><?= htmlentities($comment['id_event']) ?></td>
                             <td>
 
-                                <a href="/controllers/dashboard/modify/updateCommentCtrl.php"><img src="/public/assets/img/clear.png" alt=""  width="20"></a>
-                                <a href="/controllers/dashboard/delete/deleteCommentCtrl.php?id_comment=<?=$comment->id_comment?>"><img src="/public/assets/img/clear.png" alt="" width="20"></i></a>
+                                <a href="/controllers/dashboard/validate/validate_comment.php?id_comment=<?=$comment['id_comment']?>"><img src="/public/assets/img/check.png" alt=""  width="20"></a>
+                                <a href="/controllers/dashboard/delete/deleteCommentCtrl.php?id_comment=<?=$comment['id_comment']?>"><img src="/public/assets/img/clear.png" alt="" width="20"></i></a>
                             </td>
                         </tr>
                     <?php } ?>

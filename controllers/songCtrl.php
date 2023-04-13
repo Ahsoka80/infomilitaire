@@ -9,7 +9,7 @@ try{
         $user = $_SESSION['user'];
     }  
     
-    $songs = Song::getAll();
+    $songs = Song::getAllSongs();
 
     //On ne controle que s'il y a des données envoyées 
     if ($_SERVER['REQUEST_METHOD'] == 'POST') {

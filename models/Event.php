@@ -202,7 +202,7 @@ class Event{
                   LEFT JOIN `regions` as r
                      ON e.`id_region` = r.`id_region`
                   LEFT JOIN `departement` as d
-                     ON e.`id_dep` = d.`id_dep`;
+                     ON e.`id_dep` = d.`id_dep`
                   WHERE e.`validated_at` IS NULL;';
       
       $sth = $pdo->prepare($sql);

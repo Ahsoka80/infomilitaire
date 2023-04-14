@@ -44,8 +44,8 @@
         <h4 class="text-center mt-3">Armée de Terre</h4>
         <!---------------------------------------------------------------------------------------->
         <div class="row justify-content-center mb-2">
-            <div class=" col-sm-12 col-md-10 col-lg-10 ">
-                <div class="card mb-3 card-md-6 ">
+            <div class=" col-sm-12 col-md-10 col-lg-6 ">
+                <div class="card cardn mb-3 card-md-6 text-light">
                     <!---------------------------------------------------------------------------------------->
                     <div class="row justify-content-around">
                         <div class=" col-lg-7 mt-3">
@@ -54,40 +54,34 @@
                     </div>
                     <!---------------------------------------------------------------------------------------->
                     <!---------------------------------------------------------------------------------------->
-                    <div class="row justify-content-center align-items-center">
+                    <div class="row justify-content-center mt-4">
                         <!---------------------------------------------------------------------------------------->
                         <div class="col-lg-6">
                             
                             <div class="card-body">
                                 <p>
-                                    La Marine Nationale alias La Royale a été créée en 1624 par Armand Jean 
-                                    du Plessis de Richelieu dit “Cardinal Richelieu”. 
+                                    L'armée de terre alias La Grande Muette a été fondée en 1445 par Charles VII et les compagnies d'ordonnance. 
                                 </p>
                                 <p class="mt-4">
                                     Devise : Honneur et Patrie
                                 </p>
                                 <p class="mt-4">
-                                    Marche : Hymne de la Marine
+                                    Marche : Marche du Képi
                                 </p>
-                                <p class="mt-4">
-                                    Tradition : Bretonne, Normande et de l’ordre de Jérusalem
-                                </p>
-                                <p class="mt-4">
-                                    Symbole :  L’ancre d’or 
-                                </p>
+                                
                             </div>
                         </div>
                         <!---------------------------------------------------------------------------------------->
                         <!---------------------------------------------------------------------------------------->
                         <div class="col-lg-6">
                             <div class="text-center">
-                                <img src="/public/assets/img/Richelieu.jpg" alt="" width="250" class="rounded">
+                                <img src="/public/assets/img/KarlVII.jpg" alt="" width="250" class="rounded">
                             </div>
 
                             <p class="text-center">
-                                Armand Jean du Plessis de Richelieu
+                                Charles VII
                                 <br>
-                                1585 - 1642
+                                1403 - 1461
                             </p>
                         </div>
                         <!---------------------------------------------------------------------------------------->
@@ -104,52 +98,25 @@
                     <h5>Les missions</h5>
                 </div>
                 <div class="row justify-content-around">
-                    <div class="card mt-3" style="width: 15rem;">
+                    <div class="card mt-3 cardn text-light" style="width: 15rem;">
                         <div class="card-header">
-                            Renseignement
+                            OPINT
                         </div>
                         <div class="card-body">
                             <p class="card-text">
-                                Collecter, analyser et diffuser les renseignements concernant la situation maritime mondiale . 
+                                L'opération sentinelle visant à protéger les citoyens français face à la menace terroriste (2015); 
+                                l'opération résilience visant à venir en aide aux victimes du covid19 (2020) .
                             </p>
                         </div>
                     </div>
-                    <div class="card mt-3" style="width: 15rem;">
+                    <div class="card mt-3 cardn text-light" style="width: 15rem;">
                         <div class="card-header">
-                            Prévention
+                            OPEX
                         </div>
                         <div class="card-body">
                             <p class="card-text">
-                                Aller au-devant des crises susceptibles de menacer la sécurité de la France . 
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card mt-3" style="width: 15rem;">
-                        <div class="card-header">
-                            Intervention
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">
-                                Agir en zone de conflit pour établir la paix, évacuer et assister les populations . 
-                            </p>
-                        </div>
-                    </div>
-                    <div class="card mt-3" style="width: 15rem;">
-                        <div class="card-header">
-                            Protection
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">
-                                Assister les navires, assurer des sauvetages en mer, sauvegarder les océans, lutter contre la piraterie, les trafics et la pollution .                            </p>
-                        </div>
-                    </div>
-                    <div class="card mt-3" style="width: 15rem;">
-                        <div class="card-header">
-                            Dissuasion
-                        </div>
-                        <div class="card-body">
-                            <p class="card-text">
-                                Protéger les intérêts vitaux de la France en maintenant en permanence à la mer au moins un sous-marin nucléaire lanceur d’engins . 
+                                Protection des intérêts internationaux de la France à l'étranger avec l'opération Barkhane au Sahel ou encore 
+                                l'opération Chammal en Syrie et en Irak .
                             </p>
                         </div>
                     </div>
@@ -160,30 +127,30 @@
         <hr>
         <!---------------------------------------------------------------------------------------->
         <div class="row justify-content-center mb-2">
-            <div class=" col-sm-12 col-md-10 col-lg-10 ">
+            <div class=" col-sm-12 col-md-10 col-lg-8 ">
                 <div class="row">
                     <h5>Les grades</h5>
                 </div>
                 <div class="row justify-content-center">
                     <div class=" col-12 text-center">
-                        <img src="/public/assets/img/grade navy/amiral.png" alt="grade amiral">
-                        <p>Amiral</p>
+                        <img src="/public/assets/img/grade army/général d'armée.png" alt="grade Général d'armée">
+                        <p>Général d'armée</p>
                     </div>
                     <hr>
                     <h5 class="text-center">Officiers</h5>
                     <div class="col-12 text-center">
                         <div class="row">
                             <div class="col-4">
-                                <img src="/public/assets/img/grade navy/contre amiral.png" alt="grade contre amiral">
-                                <p>Contre Amiral</p> 
+                                <img src="/public/assets/img/grade army/général de brigade.png" alt="grade Général de brigade">
+                                <p>Général de brigade</p> 
                             </div>
                             <div class="col-4">
-                                <img src="/public/assets/img/grade navy/vice amiral.png" alt="grade vice amiral">
-                                <p>Vice Amiral</p>
+                                <img src="/public/assets/img/grade army/général de division.png" alt="grade Général de division">
+                                <p>Général de division</p>
                             </div>
                             <div class="col-4">
-                                <img src="/public/assets/img/grade navy/vice amiral d'éscadre.png" alt="grade vice amiral d'escadre">
-                                <p>Vice Amiral d'Escadre</p>
+                                <img src="/public/assets/img/grade army/général de corps d'armée.png" alt="grade Général de corps d'armée">
+                                <p>Général de corps d'armée</p>
                             </div>
                         </div>   
                     </div>
@@ -192,120 +159,110 @@
                     <div class="col-12 text-center">
                         <div class="row">
                             <div class="col-4">
-                                <img src="/public/assets/img/grade navy/capitaine de corvette.png" alt="grade capitaine de corvette">
-                                <p>Capitaine de Corvette</p> 
+                                <img src="/public/assets/img/grade army/commandantt.png" alt="grade Commandant">
+                                <p>Commandant</p> 
                             </div>
                             <div class="col-4">
-                                <img src="/public/assets/img/grade navy/capitaine de frégate.png" alt="grade capitaine de frégate">
-                                <p>Capitaine de Frégate</p>
+                                <img src="/public/assets/img/grade army/Lieutenant-colonel.png" alt="grade Lieutenant-colonel">
+                                <p>Lieutenant-colonel</p>
                             </div>
                             <div class="col-4">
-                                <img src="/public/assets/img/grade navy/capitaine de vaisseau.png" alt="grade capitaine de vaisseau">
-                                <p>Capitaine de Vaisseau</p>
+                                <img src="/public/assets/img/grade army/Colonelt.png" alt="grade Colonel">
+                                <p>Colonel</p>
                             </div>
                         </div>
                     </div>
                     <hr>
-                    <h5 class="text-center">Officiers subalternes</h5>
+                    <h5 class="text-center">OFFICIERS SUBALTERNES</h5>
                     <div class="col-12 text-center">
                         <div class="row">
-                            <div class="col-1">
-                                <img src="/public/assets/img/grade navy/eleve officier.png" alt="grade Elève officier">
-                                <p class="text-center">Elève officier</p> 
-                            </div>
                             <div class="col-3">
-                                <img src="/public/assets/img/grade navy/aspirant.png" alt="grade Aspirant">
+                                <img src="/public/assets/img/grade army/aspirantt.png" alt="grade Aspirant">
                                 <p>Aspirant</p>
                             </div>
                             <div class="col-3">
-                                <img src="/public/assets/img/grade navy/EV2.png" alt="grade Enseigne de vaisseau de 2e classe">
-                                <p>Enseigne de vaisseau de 2e classe</p>
+                                <img src="/public/assets/img/grade army/souslieutenant.png" alt="grade Sous-lieutenant">
+                                <p>Sous-lieutenant</p>
                             </div>
                             <div class="col-3">
-                                <img src="/public/assets/img/grade navy/EV1.png" alt="grade Enseigne de vaisseau de 1re classe">
-                                <p>Enseigne de vaisseau de 1re classe</p>
+                                <img src="/public/assets/img/grade army/lieutenantt.png" alt="grade Lieutenant">
+                                <p>Lieutenant</p>
                             </div>
                             <div class="col-2">
-                                <img src="/public/assets/img/grade navy/lv.png" alt="grade Lieutenant de vaisseau">
-                                <p>Lieutenant de vaisseau</p>
+                                <img src="/public/assets/img/grade army/capitainet.png" alt="grade Capitaine">
+                                <p>Capitaine</p>
                             </div>
                         </div>
                     </div>
                     <hr>
-                    <h5 class="text-center">Officiers mariniers supérieurs</h5>
+                    <h5 class="text-center">SOUS-OFFICIERS SUPÉRIEURS</h5>
                     <div class="col-12 text-center">
                         <div class="row">
                             <div class="col-4">
-                                <img src="/public/assets/img/grade navy/premier maitre.png" alt="grade Premier Maître">
-                                <p>Premier Maître</p> 
+                                <img src="/public/assets/img/grade army/adjudantt.png" alt="grade Adjudant">
+                                <p>Adjudant</p> 
                             </div>
                             <div class="col-4">
-                                <img src="/public/assets/img/grade navy/maitre principal.png" alt="grade Maître Principal">
-                                <p>Maître Principal</p>
+                                <img src="/public/assets/img/grade army/aspirantchef.png" alt="grade Adjudant-chef">
+                                <p>Adjudant-chef</p>
                             </div>
                             <div class="col-4">
-                                <img src="/public/assets/img/grade navy/major.png" alt="grade Major">
+                                <img src="/public/assets/img/grade army/majort.png" alt="grade Major">
                                 <p>Major</p>
                             </div>
                         </div>
                     </div>
                     <hr>
-                    <h5 class="text-center">Officiers mariniers subalternes</h5>
+                    <h5 class="text-center">SOUS-OFFICIERS SUBALTERNES</h5>
                     <div class="col-12 text-center">
                         <div class="row">
-                            <div class="col-3">
-                                <img src="/public/assets/img/grade navy/élève maistrancier.png" alt="grade Elève Maistrancier">
-                                <p>Elève Maistrancier</p> 
+                            <div class="col-6">
+                                <img src="/public/assets/img/grade army/sergent.png" alt="grade Sergent">
+                                <p>Sergent</p> 
                             </div>
-                            <div class="col-3">
-                                <img src="/public/assets/img/grade navy/maistrancier .png" alt="grade Maistrancier">
-                                <p>Maistrancier</p>
-                            </div>
-                            <div class="col-3">
-                                <img src="/public/assets/img/grade navy/second maitre.png" alt="grade Second Maître">
-                                <p>Second Maître</p>
-                            </div>
-                            <div class="col-3">
-                                <img src="/public/assets/img/grade navy/maitre.png" alt="grade Maître">
-                                <p>Maître</p>
+                            <div class="col-6">
+                                <img src="/public/assets/img/grade army/sergantchef.png" alt="grade Sergent-chef">
+                                <p>Sergent-chef</p>
                             </div>
                         </div>
                     </div>
                     <hr>
-                    <h5 class="text-center">Équipage</h5>
+                    <h5 class="text-center">MILITAIRES DU RANG</h5>
                     <div class="col-12 text-center">
                         <div class="row">
                             <div class="col-3">
-                                <img src="/public/assets/img/grade navy/mousse.png" alt="grade Mousse">
-                                <p>Mousse</p> 
+                                <img src="/public/assets/img/grade army/soldat.png" alt="grade Soldat">
+                                <p>Soldat</p> 
                             </div>
                             <div class="col-3">
-                                <img src="/public/assets/img/grade navy/matelots.png" alt="grade Matelot">
-                                <p>Matelot</p>
+                                <img src="/public/assets/img/grade army/caporal1.png" alt="grade Caporal">
+                                <p>Caporal</p>
                             </div>
                             <div class="col-3">
-                                <img src="/public/assets/img/grade navy/quartier-maitre.png" alt="grade Quartier-Maître de 2e classe">
-                                <p>Quartier-Maître de 2e classe</p>
+                                <img src="/public/assets/img/grade army/caporalchef.png" alt="grade Caporal-chef">
+                                <p>Caporal-chef</p>
                             </div>
                             <div class="col-3">
-                                <img src="/public/assets/img/grade navy/quartier-maitre 1.png" alt="grade Quartier-Maître de 1re classe">
-                                <p>Quartier-Maître de 1re classe</p>
+                                <img src="/public/assets/img/grade army/caporalchef1e.png" alt="grade Caporal-chef de 1ère classe">
+                                <p>Caporal-chef de 1ère classe</p>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center mb-2 mt-3">
+        <div class="row justify-content-center mb-5 mt-5">
             <div class=" col-sm-12 col-md-10 col-lg-9 ">
                 <div class="row">
                     <div class="col">
                         <h5 class="text-center">Pour plus d'information</h5>
                     </div>
-                    <div>
-                        <p>Site officiel de recrutement : <a href="https://www.lamarinerecrute.fr/">Cliquez-ici pour accéder au site</a></p>
-                        <p>Chaine Youtube : <a href="https://www.youtube.com/@armeedeterre">Cliquez-ici pour accéder au site</a></p>
-                        <p>Compte Twitter : <a href="https://twitter.com/MarineNationale">Cliquez-ici pour accéder au site</a></p>
+                    <div class="text-center mt-2">
+                        <p>
+                            Site officiel de recrutement : <a href="https://www.sengager.fr/"><img src="/public/assets/img/Logo_of_the_French_Army_(Armee_de_Terre).svg.png" alt="" width="30"></a> -  
+                            Chaine Youtube : <a href="https://www.youtube.com/@armeedeterre"><img src="/public/assets/img/youtube-logo-hd-8.png" alt="" width="40"></a> - 
+                            Compte Twitter : <a href="https://twitter.com/armeedeterre"><img src="/public/assets/img/twitter-logo-twitter-icon-transparent-free-free-png.webp" alt="" width="30"></a>
+                        </p>
                     </div>
                 </div>
             </div>

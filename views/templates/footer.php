@@ -1,32 +1,14 @@
-    <footer class="text-light"><!--Footer start-->
-        <div class="container-fluid"><!--Container start--> 
-            <div class="row justify-content-center"><!--Row start-->
-                <div class="col-sm-6 text-center mt-3"><!--Informations Complémentaires start-->
-                    <h6>À propos</h6>
+    <footer class="text-light">
+        <div class="container-fluid"> 
+            <div class="row justify-content-around">
+                <div class="col-sm-6 text-center mt-5 mb-5">
                     <div class="col text-center">
-                        <a href="">FAQ</a>
+                        <p>Contact - Mention légal - CGU</p>
                     </div>
-                    <div class="col text-center">
-                        <a href="">Contact</a>
-                    </div>
-                </div><!--Informations Complémentaires end-->
-<!--======================================================================================================================-->
-                <div class="col-sm-6 text-center mt-3 mb-3"><!--Informations légales start-->
-                    <h6>Informations légales</h6>
-                    <div class="col text-center">
-                        <a href="">CGU</a>
-                    </div>
-                    <div class="col text-center">
-                        <a href="">Mention légal</a>
-                    </div>
-                    <div class="col text-center">
-                        <p><a href="">Politique des données personnelles</a></p>
-                    </div>
-                </div><!--Informations légales end-->
-<!--======================================================================================================================--> 
-            </div><!--Row end-->
-        </div><!--Container end-->
-    </footer><!--Footer end-->
+                </div>
+            </div>
+        </div>
+    </footer>
 <!--======================================================================================================================-->
     <!--Script JS start-->
     <script src="/public/assets/js/script.js"></script>

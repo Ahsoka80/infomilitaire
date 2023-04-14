@@ -43,9 +43,9 @@
 
         <h4 class="text-center mt-3">Marine Nationale</h4>
         <!---------------------------------------------------------------------------------------->
-        <div class="row justify-content-center mb-2">
-            <div class=" col-sm-12 col-md-10 col-lg-10 ">
-                <div class="card mb-3 card-md-6 ">
+        <div class="row justify-content-center mt-2 mb-2">
+            <div class=" col-sm-12 col-md-11 col-lg-7">
+                <div class="card cardn mb-3 card-md-6 text-light">
                     <!---------------------------------------------------------------------------------------->
                     <div class="row justify-content-around">
                         <div class=" col-lg-7 mt-3">
@@ -56,7 +56,7 @@
                     <!---------------------------------------------------------------------------------------->
                     <div class="row justify-content-center align-items-center">
                         <!---------------------------------------------------------------------------------------->
-                        <div class="col-lg-6">
+                        <div class="col-lg-4">
                             
                             <div class="card-body">
                                 <p>
@@ -99,12 +99,12 @@
         </div>
         <!---------------------------------------------------------------------------------------->
         <div class="row justify-content-center mb-2">
-            <div class=" col-sm-12 col-md-10 col-lg-7 ">
+            <div class="col-sm-12 col-md-10 col-lg-6 text-light">
                 <div class="row">
                     <h5>Les missions</h5>
                 </div>
                 <div class="row justify-content-around">
-                    <div class="card mt-3" style="width: 15rem;">
+                    <div class="card cardn mt-3" style="width: 15rem;">
                         <div class="card-header">
                             Renseignement
                         </div>
@@ -114,7 +114,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="card mt-3" style="width: 15rem;">
+                    <div class="card cardn mt-3" style="width: 15rem;">
                         <div class="card-header">
                             Prévention
                         </div>
@@ -124,7 +124,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="card mt-3" style="width: 15rem;">
+                    <div class="card cardn mt-3" style="width: 15rem;">
                         <div class="card-header">
                             Intervention
                         </div>
@@ -134,7 +134,7 @@
                             </p>
                         </div>
                     </div>
-                    <div class="card mt-3" style="width: 15rem;">
+                    <div class="card cardn mt-3" style="width: 15rem;">
                         <div class="card-header">
                             Protection
                         </div>
@@ -143,7 +143,7 @@
                                 Assister les navires, assurer des sauvetages en mer, sauvegarder les océans, lutter contre la piraterie, les trafics et la pollution .                            </p>
                         </div>
                     </div>
-                    <div class="card mt-3" style="width: 15rem;">
+                    <div class="card cardn mt-3" style="width: 15rem;">
                         <div class="card-header">
                             Dissuasion
                         </div>
@@ -157,10 +157,10 @@
             </div>
         </div>
         <!---------------------------------------------------------------------------------------->
-        <hr>
+        <hr class="text-center">
         <!---------------------------------------------------------------------------------------->
         <div class="row justify-content-center mb-2">
-            <div class=" col-sm-12 col-md-10 col-lg-10 ">
+            <div class=" col-sm-12 col-md-10 col-lg-8 ">
                 <div class="row">
                     <h5>Les grades</h5>
                 </div>
@@ -296,16 +296,18 @@
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center mb-2 mt-3">
+        <div class="row justify-content-center mb-5 mt-5">
             <div class=" col-sm-12 col-md-10 col-lg-9 ">
                 <div class="row">
                     <div class="col">
                         <h5 class="text-center">Pour plus d'information</h5>
                     </div>
-                    <div>
-                        <p>Site officiel de recrutement : <a href="https://www.lamarinerecrute.fr/">Cliquez-ici pour accéder au site</a></p>
-                        <p>Chaine Youtube : <a href="https://www.youtube.com/@MarineNationaleOfficiel">Cliquez-ici pour accéder au site</a></p>
-                        <p>Compte Twitter : <a href="https://twitter.com/MarineNationale">Cliquez-ici pour accéder au site</a></p>
+                    <div class="text-center mt-2">
+                        <p>
+                            Site officiel de recrutement : <a href="https://www.lamarinerecrute.fr/"><img src="/public/assets/img/Logo_of_the_French_Army_(Armee_de_Terre).svg.png" alt="" width="30"></a> -  
+                            Chaine Youtube : <a href="https://m.youtube.com/channel/UCrP3-mdG7xukDyDHHuFTzQg"><img src="/public/assets/img/youtube-logo-hd-8.png" alt="" width="40"></a> - 
+                            Compte Twitter : <a href="https://twitter.com/MarineNationale"><img src="/public/assets/img/twitter-logo-twitter-icon-transparent-free-free-png.webp" alt="" width="30"></a>
+                        </p>
                     </div>
                 </div>
             </div>

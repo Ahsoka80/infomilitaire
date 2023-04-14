@@ -41,32 +41,60 @@
         <!--================LINE START========================-->
         <hr>
         <!--================LINE END========================-->
-        <div class="row justify-content-center mb-2"><!--ROW NEWS START-->
+        <div class="row justify-content-center mb-4"><!--ROW NEWS START-->
             <!--TITLE NEWS START-->
             <div class="col-sm-12 col-md-11 col-lg-11 mb-1">
                 <h5>Actualités :</h5>
             </div>
             <!--TITLE NEWS END-->
 
-            <?php for ($i = $count - 6; $i < $count; $i++) {
-                        $item = $items[$i]; { ?>
             <!--CARD START-->
-            <div class=" col-sm-12 col-md-6 col-lg-4 ">
-                <div class="card mb-3 card-md-6 " style="max-width: 540px;">
-                    
-                        <div class="col-12">
-                            <div class="card-body">
-                                <h5 class="card-title"> <?=  $item->title ?> </h5>
-                                <p class="card-text"> <?= $item->description ?> </p>
-                                <a class="btn btn-primary" href="<?= $item->link ?>" role="button">Plus d'infos</a>
-                                <small> <?= date('d.m.Y à H:i', strtotime($item->pubDate)) ?> </small>
-                            </div>
+            <div class=" col-sm-12 col-md-6 col-lg-3 ">
+                <div class="card mb-3 card-md-6 " style="width: 20rem;">
+                    <div class="col-12">
+                        <div class="card-body">
+                            <h5 class="card-title">Une frégate de surveillance antillaise en mission dans l’Est de l’océan Pacifique</h5>
+                            <p class="card-text"> 
+                                Le Germinal, l’une des deux frégates de surveillance de la Marine nationale basées à Fort-de-France, en Martinique, 
+                                évolue exceptionnellement dans l’océan Pacifique.
+                            </p>
+                            <a class="btn btn-primary" href="https://www.meretmarine.com/fr/defense/une-fregate-de-surveillance-antillaise-en-mission-dans-l-est-de-l-ocean-pacifique" role="button">Plus d'infos</a>
+                            <small></small>
                         </div>
-                    
+                    </div>
                 </div>
             </div>
             <!--CARD END-->
-            <?php }
-            } ?>
+            <div class=" col-sm-12 col-md-6 col-lg-3 ">
+                <div class="card mb-3 card-md-6 " style="width: 20rem;">
+                    <div class="col-12">
+                        <div class="card-body">
+                            <h5 class="card-title"> LPM 2024-2030 : arbitrages de haute intensité </h5>
+                            <p class="card-text"> 
+                                Les nouvelles orientations de la politique de défense française font couler beaucoup d'endre
+                                depuis quelques jours, en dépit de l'augmentation globale des moyens de 40% annoncée le 20 Janvier dernier pour les sept prochaines années
+                                (400 milliards d'euros budgaétisés au Parlement et 13 milliards de recettes extra budgétaires).
+                            </p>
+                            <a class="btn btn-primary" href="https://www.journal-aviation.com/actualites/46954-lpm-2024-2030-arbitrages-de-haute-intensite" role="button">Plus d'infos</a>
+                            <small></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class=" col-sm-12 col-md-6 col-lg-3 ">
+                <div class="card mb-3 card-md-5 " style="width: 20rem;">
+                    <div class="col-12">
+                        <div class="card-body">
+                            <h5 class="card-title"> Avec les Serval, l'armée de terre poursuit sa modernisation</h5>
+                            <p class="card-text"> 
+                                L'armée de Terre poursuit sa modernisation. Les vieux VAB, les véhicules de l'avant blindés entrés en service en 1976, et les chars légers 
+                                AMX 10 RC, du début des années 1980, cèdent la place à de nouveaux matériels 
+                            </p>
+                            <a class="btn btn-primary" href="https://www.lefigaro.fr/international/avec-les-serval-l-armee-de-terre-poursuit-sa-modernisation-20230331" role="button">Plus d'infos</a>
+                            <small></small>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div><!--ROW NEWS END-->
     </div><!--CONTAINER END-->

@@ -41,3 +41,11 @@ div.cardSong{
     display: none;
     transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
+
+div.cardEvent{
+    background-color: #002450;
+}
+
+div.cardn{
+    background-color: #002450;
+}

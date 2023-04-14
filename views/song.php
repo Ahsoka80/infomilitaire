@@ -24,7 +24,7 @@
                                         </div>
                                         <div class="mt-1">
                                             <label for="description">Description :</label>
-                                            <input class="form-control" id="description" name="description" required>
+                                            <input class="form-control" id="description" name="description" pattern="<?= REGEXP_DESCRIPTION ?>"required>
                                             <small><?= $errors['description']  ?? '' ?></small>
                                         </div>
                                         <div class="mt-1">

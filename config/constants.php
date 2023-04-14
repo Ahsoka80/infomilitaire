@@ -14,7 +14,7 @@
  define('REGEXP_DATE','^([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))$');
  define('REGEXP_LINKS','^((?:https?:)?\/\/)?((?:www|m)\.)?((?:youtube(-nocookie)?\.com|youtu.be))(\/(?:[\w\-]+\?v=|embed\/|v\/)?)([\w\-]+)(\S+)?$');
  define('REGEXP_COMMENT','[[:alnum:][:space:]áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ!:.;,#.-]+');
-//  define('REGEXP_DESCRIPTION','^[a-zA-Z0-9éçà.!\'^\',""^\s()-œ]$');
+ define('REGEXP_DESCRIPTION','[[:alnum:][:space:]áàâäãåçéèêëíìîïñóòôöõúùûüýÿæœÁÀÂÄÃÅÇÉÈÊËÍÌÎÏÑÓÒÔÖÕÚÙÛÜÝŸÆŒ!:.;,#.-]+');
 
 
  define('ERRORS', [

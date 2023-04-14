@@ -1,6 +1,6 @@
 <div class="container">
     <div class="row justify-content-center">
-        <div class="col-sm-7 col-md-6 col-lg-5 mt-3">
+    <div class="col-lg-6 text-center mt-4">
             <h3 class="text-center">Chant Militaire</h3>
             <div class="row justify-content-center">
                 <div class="col-lg-6 mt-2">

@@ -1,7 +1,7 @@
 <nav class="navbar navbar-dark navbar-expand-lg"><!--NAVBAR START-->
     <div class="container-fluid"><!--CONTAINER START-->
         <a class="navbar-brand" href="../../controllers/homeCtrl.php">
-            <img src="/public/assets/img/Chat_roux_à_pelage_court..jpg" alt="logo site" width="100" height="100">
+            <h5>Info Militaire</h5>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>

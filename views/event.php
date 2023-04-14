@@ -1,9 +1,10 @@
 <div class="container">
     <div class="row justify-content-center">
     <div class="col-lg-6 text-center mt-4">
+        <h3 class="mb-5">Evènements nationaux</h3>
 
         <?php if( isset($_SESSION['user']) && $_SESSION['user'] !== null ) : ?>
-            <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#formAddEvent">Ajouter un évenement</button>
+            <button type="button" class="btn text-light" style="background-color: #ff0000;" data-bs-toggle="modal" data-bs-target="#formAddEvent">Ajouter un évenement</button>
         <?php else : ?>
             <a href="/controllers/connect/loginCtrl.php"><button type="button" class="btn btn-primary" >Ajouter un évenement</button></a>
         <?php endif; ?>
@@ -74,7 +75,7 @@
                     <p class="card-text text-light"><?= $event['address']?> , <?= $event['dep_name'] ?>  , <?= $event['region_name'] ?> le <?= date('d/m/Y à H:i', strtotime($event['dateHour'])) ?></p>
                     <p class="card-text text-light"><?= $event['description'] ?></p>
                     <div class="text-center">
-                        <img src="/public/assets/img/Chat_roux_à_pelage_court..jpg" alt="">
+                        <img src="/public/assets/img/Capture d’écran 2023-04-14 114107.png" alt="">
                     </div>
                     <p class="card-text text-light">Proposée par <?= $event['pseudo'] ?></p>
                     
